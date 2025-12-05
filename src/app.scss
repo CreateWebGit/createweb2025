@@ -1,0 +1,85 @@
+@use "$lib/styles/variables.scss" as *;
+@use "$lib/styles/layout.scss" as *;
+@use "$lib/styles/cw_grid.scss" as *;
+@use "$lib/styles/fonts.scss" as *;
+@use "$lib/styles/typography.scss" as *;
+@use "$lib/styles/utilities.scss" as *;
+@use "$lib/styles/buttons.scss" as *;
+@use "$lib/styles/sections/hero.scss" as *;
+
+html {
+	color-scheme: dark;
+	transition: color-scheme 2s ease;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	overflow-x: hidden;
+	scroll-behavior: smooth;
+	font-size: 16px;
+
+	&.light-mode {
+		color-scheme: light;
+	}
+
+	@media (min-width: 1920px) {
+		font-size: 16px;
+	}
+
+	@media (max-width: 1426px) {
+		font-size: 1.12vw;
+	}
+
+	@media (max-width: 768px) {
+		font-size: 16px;
+	}
+
+	@media (max-width: 768px) {
+		touch-action: pan-y;
+	}
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	font-family: "Inter Display";
+	background-color: var(--bg-color);
+	transition:
+		background-color 0.2s ease,
+		color 0.2s ease,
+		border-color 0.2s ease;
+
+	* {
+		box-sizing: border-box;
+	}
+
+	&::-webkit-scrollbar {
+	    display: none;
+	}
+
+	//underlay for mega menu
+	&::after {
+		content: "";
+		position: fixed;
+		top: 0;
+		left: 0;
+		height: 100vh;
+		width: 100%;
+		background-color: #0d162400;
+		pointer-events: none;
+		transition:
+			background-color 0.2s ease,
+			backdrop-filter 0.2s ease;
+	}
+
+	&.megamenu-open {
+		&::after {
+			background: #0c111ba2;
+			backdrop-filter: blur(10px);
+		}
+	}
+
+	&.slide-menu-open {
+	    overflow: hidden;
+	}
+}
+
+//#101010XX <- alpha

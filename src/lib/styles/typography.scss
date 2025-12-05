@@ -1,0 +1,215 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+	margin: 0;
+}
+
+h1,
+.h1 {
+	font-size: var(--h1-font-size);
+	font-weight: 900;
+	text-transform: uppercase;
+
+	&.lowercase {
+		font-weight: 700;
+		text-transform: none;
+		font-size: 4.35rem;
+		letter-spacing: -0.02em;
+	}
+
+	@media (max-width: 768px) {
+		font-size: var(--h1-font-size-xs);
+	}
+
+	&.subpage-hero-heading {
+		text-transform: none;
+		letter-spacing: -0.02em;
+		font-size: 4rem;
+		font-weight: 500;
+
+		@media (max-width: 768px) {
+			font-size: 36px;
+		}
+	}
+}
+
+h2,
+.h2 {
+	font-size: var(--h2-font-size);
+	font-weight: 900;
+	text-transform: uppercase;
+
+	@media (max-width: 768px) {
+		font-size: var(--h2-font-size-xs);
+	}
+}
+
+h3,
+.h3 {
+	font-size: var(--h3-font-size);
+	font-weight: 900;
+	text-transform: uppercase;
+
+	@media (max-width: 768px) {
+		font-size: var(--h3-font-size-xs);
+	}
+}
+
+h4,
+.h4 {
+	font-size: var(--h4-font-size);
+	font-weight: 900;
+	text-transform: uppercase;
+
+	@media (max-width: 768px) {
+		font-size: var(--h4-font-size-xs);
+	}
+}
+
+h5,
+.h5 {
+	font-size: var(--subheading-font-size);
+	text-transform: uppercase;
+	color: var(--accent-color);
+	font-family: "JetBrains Mono";
+}
+
+.cw-text-transform-none {
+	text-transform: none;
+}
+
+.cw-text-semibold {
+	font-weight: 600;
+}
+
+.subheading {
+	font-size: var(--subheading-font-size);
+	text-transform: uppercase;
+	color: var(--body-text-color);
+	font-family: "JetBrains Mono";
+
+	&.white {
+		color: #ffffff;
+	}
+}
+
+p {
+	font-size: var(--p-font-size);
+	color: var(--body-text-color);
+	line-height: 1.5625;
+
+	@media (max-width: 768px) {
+		font-size: var(--p-font-size-xs);
+	}
+
+	&.bold {
+		font-weight: 600;
+	}
+
+	&.special {
+		color: var(--bw);
+		font-weight: 900;
+	}
+
+	&.hero {
+		font-size: 1.125rem;
+		color: var(--bw);
+
+		@media (max-width: 768px) {
+			font-size: 1rem;
+		}
+	}
+}
+
+.text-white {
+	color: white;
+}
+
+.text-accent {
+	color: var(--accent-color);
+}
+
+a {
+	all: unset;
+
+	&.link-navigation {
+	}
+
+	&.link-body {
+		font-size: inherit;
+		font-family: inherit;
+		cursor: pointer;
+		transition: color 0.1s ease;
+		position: relative;
+
+		&::after {
+			height: 1px;
+			width: 100%;
+			content: "";
+			position: absolute;
+			bottom: -1px;
+			left: 0;
+			background-color: var(--body-text-color);
+			transition:
+				width 0.2s ease,
+				background-color 0.1s ease;
+			pointer-events: none;
+		}
+
+		&:hover {
+			color: var(--accent-color);
+
+			&::after {
+				width: 0%;
+				background-color: var(--accent-color);
+			}
+		}
+	}
+
+	&.link-monospace {
+		font-size: inherit;
+		font-family: inherit;
+		cursor: pointer;
+		transition: color 0.1s ease;
+		position: relative;
+
+		&::after {
+			height: 0.5px;
+			width: 0;
+			content: "";
+			position: absolute;
+			bottom: -1px;
+			left: 0;
+			background-color: var(--body-text-color);
+			transition: width 0.2s ease;
+			pointer-events: none;
+		}
+
+		&:hover {
+			color: var(--accent-color);
+
+			&::after {
+				width: 100%;
+				background-color: var(--accent-color);
+			}
+		}
+	}
+}
+
+.highlight {
+	background-color: var(--accent-color);
+	padding: 0 10px;
+	color: white;
+
+	@media (max-width: 768px) {
+		padding: 0 4px;
+	}
+}
+
+.force-lowercase {
+	text-transform: none;
+}

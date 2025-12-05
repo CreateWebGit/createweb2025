@@ -1,0 +1,46 @@
+:root {
+    interpolate-size: allow-keywords;
+    overscroll-behavior: none;
+
+    //--------------TYPO-----------------
+    --h1-font-size: 5.125rem;
+    --h2-font-size: 2.625rem;
+    --h3-font-size: 2rem;
+    --h4-font-size: 1.5rem;
+
+    --h1-font-size-xs: 36px;
+    --h2-font-size-xs: 32px;
+    --h3-font-size-xs: 24px;
+    --h4-font-size-xs: 24px;
+
+    --subheading-font-size: 0.6875rem;
+
+    --p-font-size: 1rem;
+    --p-font-size-xs: 14px;
+
+    --button-font-size: 0.875rem;
+    //-----------------------------------
+
+    //--------------BG COLORS------------
+    //darker blue
+    //--bg-color: light-dark(#eeeeee, #111316);
+    --bg-color: light-dark(#eeeeee, #0D1624);
+    --secondary-bg: light-dark(#e8e8e8, #101010);
+    --tertiary-bg: light-dark(#e0e0e0, #141414);
+    //-----------------------------------
+
+    --accent-color: #FF8C00;
+
+    --button-secondary-bg: light-dark(#e3e3e3, #202020);
+
+    //gray
+    //--border-color: light-dark(#cfcfcf, #191919);
+    --border-color: light-dark(#cfcfcf, #222A36);
+    --border-color-transparent: rgba(85, 85, 85, 0.43);
+    --dashed-border-image: repeating-linear-gradient(90deg, var(--border-color) 0, var(--border-color) 0.25rem, transparent 0.25rem, transparent 0.5rem) 1;
+
+    --bw: light-dark(#000000, #ffffff);
+    --body-text-color: light-dark(#000000, #909090);
+
+    --monochrome-stripe-foreground-color: light-dark(#e6e6e6, rgba(255,255,255,0.05))
+}

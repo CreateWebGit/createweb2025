@@ -1,0 +1,57 @@
+.cw-button {
+    all: unset;
+    font-size: var(--button-font-size);
+    text-transform: uppercase;
+    font-weight: 700;
+    padding: 0.85rem 1rem;
+    display: inline-block;
+    cursor: pointer;
+    border: none;
+    user-select: none;
+    color: white;
+    transition: background-color 0.1s ease, color 0.1s ease;
+
+    &:focus {
+        outline: none;
+    }
+
+    &.full-width {
+        width: -webkit-fill-available;
+        text-align: center
+    }
+
+    &.small {
+        padding: 0.50rem 1rem;
+    }
+}
+
+.cw-button--primary {
+    @extend .cw-button;
+    background-color: var(--accent-color);
+
+    &:hover {
+        background-color: #b16200;
+    }
+}
+
+.cw-button--secondary {
+    @extend .cw-button;
+    background-color: var(--button-secondary-bg);
+    color: light-dark(#101010, #ffffff);
+
+    &:hover {
+        background-color: white;
+        color: black;
+    }
+}
+
+.cw-button--stroked {
+    @extend .cw-button;
+    outline: 0.125rem solid white;
+    outline-offset: -0.125rem;
+
+    &:hover {
+        background-color: white;
+        color: black;
+    }
+}

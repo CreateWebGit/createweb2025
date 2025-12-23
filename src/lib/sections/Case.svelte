@@ -10,6 +10,13 @@
 	const setIframeFullscreen = () => {
 		document.querySelector("#test-iframe")?.classList.add("fullscreen");
 	};
+
+	interface Props {
+		hasBorderBottom?: boolean;
+		hasBorderTop?: boolean;
+	}
+
+	let { hasBorderTop = false, hasBorderBottom = false }: Props = $props();
 </script>
 
 <Section lines={"X---X"} class="py-6 py-xs-2">
@@ -19,7 +26,12 @@
 	</Column>
 </Section>
 
-<Section lines={"X---X"} class="pb-6">
+<Section
+	lines={"X---X"}
+	class="pb-6"
+	borderTop={hasBorderTop}
+	borderBottom={hasBorderBottom}
+>
 	<Column span={12} class="d-flex justify-center mockups-container">
 		<div class="hide-mobile">
 			<MacBook>
@@ -209,6 +221,7 @@
 
 	:global(.mockups-container) {
 		position: relative;
+		max-height: 43.75rem;
 	}
 
 	:global(.phone-container) {

@@ -14,7 +14,9 @@
 	import TwoColumnTextImage2 from "$src/lib/sections/TwoColumnTextImage2.svelte";
 	import BigAccordion from "$src/lib/sections/BigAccordion.svelte";
 
-	import SectionDivider from '$components/layout/SectionDivider.svelte'
+	import SectionDivider from "$components/layout/SectionDivider.svelte";
+
+	import Polaroid from "$src/lib/components/Polaroid.svelte";
 
 	//accordion content config
 	const accordionItems: AccordionItem[] = [
@@ -110,32 +112,112 @@
 		{
 			id: "1",
 			label: "Säkerhetsuppdateringar",
-			content: "<h2>Hello 1</h2><p>World.</p>",
+			content: `
+            <div class="cw-col-6 cw-col-xs-12">
+                <h4>Säkerhetsuppdateringar</h4>
+                <p>
+                    Vi håller din tekniska stack trygg och uppdaterad – från patchar och plugins till backend och servermiljöer. 
+                    Du slipper oro för sårbarheter och kan fokusera på verksamheten medan vi tar hand om säkerheten löpande.
+                </p>
+            </div>
+            <div class="cw-col-6 cw-col-xs-12">
+                <div class="image-container">
+                    <img src="" alt="Säkerhetsuppdateringar"/>
+                </div>
+            </div>
+        `,
 		},
 		{
 			id: "2",
 			label: "Prestandaoptimeringar",
-			content: "<h2>Hello 2</h2><p>World.</p>",
+			content: `
+            <div class="cw-col-6 cw-col-xs-12">
+                <h4>Prestandaoptimeringar</h4>
+                <p>
+                    Hastighet är hårdvaluta – både för SEO och användarupplevelse. 
+                    Vi analyserar flaskhalsar, optimerar kod, trim­mar servrar och ser till att din webbplats känns lätt, snabb och redo att konvertera.
+                </p>
+            </div>
+            <div class="cw-col-6 cw-col-xs-12">
+                <div class="image-container">
+                    <img src="" alt="Prestandaoptimeringar"/>
+                </div>
+            </div>
+        `,
 		},
 		{
 			id: "3",
 			label: "Övervakning",
-			content: "<h2>Hello 3</h2><p>World.</p>",
+			content: `
+            <div class="cw-col-6 cw-col-xs-12">
+                <h4>Övervakning & incidenthantering</h4>
+                <p>
+                    Vi har ögonen på allt – dygnet runt. Vid oväntade fel agerar vi direkt, innan störningar hinner påverka kunder eller försäljning. 
+                    Ingen panik, inga brandkårsutryckningar för er. Vi tar smällen åt er.
+                </p>
+            </div>
+            <div class="cw-col-6 cw-col-xs-12">
+                <div class="image-container">
+                    <img src="" alt="Övervakning och incidenthantering"/>
+                </div>
+            </div>
+        `,
 		},
 		{
 			id: "4",
 			label: "Löpande förbättringar",
-			content: "<h2>Hello 4</h2><p>World.</p>",
+			content: `
+            <div class="cw-col-6 cw-col-xs-12">
+                <h4>Löpande förbättringar</h4>
+                <p>
+                    Små, smarta uppdateringar gör enorm skillnad över tid. 
+                    Vi förbättrar UI, flöden och funktioner kontinuerligt så att er digitala upplevelse alltid ligger steget före – och känns modern även om åren går.
+                </p>
+            </div>
+            <div class="cw-col-6 cw-col-xs-12">
+                <div class="image-container">
+                    <img src="" alt="Löpande förbättringar"/>
+                </div>
+            </div>
+        `,
 		},
 		{
 			id: "5",
 			label: "Backup & Restore",
-			content: "<h2>Hello 5</h2><p>World.</p>",
+			content: `
+            <div class="cw-col-6 cw-col-xs-12">
+                <h4>Backup & Restore</h4>
+                <p>
+                    Automatiska och säkra backuper som faktiskt fungerar när det gäller. 
+                    Skulle något gå snett återställer vi snabbt allt till ett stabilt läge. 
+                    Ni slipper långa driftstopp och kan andas lugnt även när tekniken strular.
+                </p>
+            </div>
+            <div class="cw-col-6 cw-col-xs-12">
+                <div class="image-container">
+                    <img src="" alt="Backup och återställning"/>
+                </div>
+            </div>
+        `,
 		},
 		{
 			id: "6",
 			label: "Support",
-			content: "<h2>Hello 6</h2><p>World.</p>",
+			content: `
+            <div class="cw-col-6 cw-col-xs-12">
+                <h4>Support när ni behöver det</h4>
+                <p>
+                    Frågor, funderingar eller något som krånglar? 
+                    Ni får raka, tydliga svar utan tekniskt mumbo-jumbo. 
+                    Vi guidar, förklarar och löser – utan att ni behöver känna att minsta fråga är “dum”.
+                </p>
+            </div>
+            <div class="cw-col-6 cw-col-xs-12">
+                <div class="image-container">
+                    <img src="" alt="Support"/>
+                </div>
+            </div>
+        `,
 		},
 	];
 
@@ -232,11 +314,15 @@
 	];
 </script>
 
+<div style="height: 25rem; width: 40rem; background: red; position: relative;">
+	<Polaroid position="absolute" left={24} top={24} />
+</div>
+
 <!-- SectionDivider.svelte -->
 <Section class="mt-5">
 	<p class="subheading force-lowercase">SectionDivider.svelte</p>
 </Section>
-<SectionDivider/>
+<SectionDivider />
 
 <!-- HorizontalScrollSectionAlt.svelte -->
 <Section class="mt-5" borderBottom>

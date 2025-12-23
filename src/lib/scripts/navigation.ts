@@ -16,20 +16,6 @@ export const links: NavItem[] = [
 			{
 				title: "webbutveckling",
 				url: "/tjanster/webbutveckling",
-				sublinks: [
-					{
-						title: "frontend",
-						url: "/tjanster/webbutveckling",
-					},
-					{
-						title: "backend",
-						url: "/tjanster/marknadsforing",
-					},
-					{
-						title: "design",
-						url: "/tjanster/underhall-support",
-					},
-				],
 			},
 			{
 				title: "marknadsföring",

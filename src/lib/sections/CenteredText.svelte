@@ -4,6 +4,7 @@
 
 	import ColumnButton from "$src/lib/components/ColumnButton.svelte";
 	import FlexContainer from "$src/lib/components/layout/FlexContainer.svelte";
+	import { showBookingForm } from "$lib/stores/layoutStore";
 
 	interface Props {
 		content: {
@@ -30,7 +31,8 @@
 				width={1}
 				borderRight
 				buttonText="BOKA ETT 20 MIN MÖTE"
-				type="link"
+				type="button"
+				onClick={() => ($showBookingForm = !$showBookingForm)}
 			/>
 			<ColumnButton width={1} buttonText="BEGÄR EN OFFERT" type="link" />
 		</FlexContainer>

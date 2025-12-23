@@ -1,4 +1,4 @@
-// src/lib/server/google.ts
+// google client for calendar api
 import { google } from "googleapis";
 import {
 	GOOGLE_CLIENT_ID,

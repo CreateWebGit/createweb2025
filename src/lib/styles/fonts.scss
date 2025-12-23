@@ -1,30 +1,36 @@
 //jetbrains mono
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap");
 
 //regular
 @font-face {
-    font-family: 'Inter Display';
-    font-weight: 400;
-    src: url('/fonts/InterDisplay-Regular.woff2');
+	font-family: "Inter Display";
+	font-weight: 400;
+	src: url("/fonts/InterDisplay-Regular.woff2");
 }
 
 //bold
 @font-face {
-    font-family: 'Inter Display';
-    font-weight: 500;
-    src: url('/fonts/InterDisplay-SemiBold.ttf');
+	font-family: "Inter Display";
+	font-weight: 500;
+	src: url("/fonts/InterDisplay-SemiBold.ttf");
 }
 
 //bold
 @font-face {
-    font-family: 'Inter Display';
-    font-weight: 700;
-    src: url('/fonts/InterDisplay-Bold.woff2');
+	font-family: "Inter Display";
+	font-weight: 700;
+	src: url("/fonts/InterDisplay-Bold.woff2");
 }
 
 //black
 @font-face {
-    font-family: 'Inter Display';
-    font-weight: 900;
-    src: url('/fonts/InterDisplay-Black.woff2');
+	font-family: "Inter Display";
+	font-weight: 900;
+	src: url("/fonts/InterDisplay-Black.woff2");
+}
+
+//black
+@font-face {
+	font-family: "Mansalva";
+	src: url("/fonts/Mansalva.ttf");
 }

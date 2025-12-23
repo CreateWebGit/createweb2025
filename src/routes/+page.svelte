@@ -10,10 +10,13 @@
 	import TwoColAccordion from "$lib/sections/TwoColAccordion.svelte";
 	import SectionDivider from "$components/layout/SectionDivider.svelte";
 	import ColumnButton from "$src/lib/components/ColumnButton.svelte";
+	import { showBookingForm } from "$lib/stores/layoutStore";
 
 	import type { AccordionItem } from "$src/lib/models/accordion";
+	import { onMount } from "svelte";
+	import HeroComputerv2 from "$src/lib/components/HeroComputerv2.svelte";
 
-	//accordion content config
+	//faq
 	const accordionItems: AccordionItem[] = [
 		{
 			title: "Vad erbjuder ni för typ av webbutveckling?",
@@ -53,18 +56,18 @@
 		{
 			title: "Webbutveckling",
 			content:
-				"<p>Förbättra organisk synlighet genom sökordsoptimering, kvalitetsinnehåll, teknisk prestanda och auktoritativa länkar.</p>",
+				"<p class='mb-1'>Vi hjälper dig skapa en snabb och modern webbplats som stärker ditt varumärke, levererar en smidig upplevelse och driver fler affärer online.</p> <a class='link-body' href='/tjanster/webbutveckling'>Se vad vi kan hjälpa till med -></a>",
 			open: true,
 		},
 		{
 			title: "Marknadsföring",
 			content:
-				"<p>Betald synlighet via sökannonser; relevanta sökord, optimerade landningssidor och budhantering.</p>",
+				"<p class='mb-1'>Vi hjälper dig nå rätt målgrupp med smart, datadriven marknadsföring som ökar synligheten, bygger förtroende och ger verkliga resultat.</p> <a class='link-body' href='/tjanster/marknadsforing'>Se hur vi kan hjälpa er -></a>",
 		},
 		{
 			title: "Underhåll & Support",
 			content:
-				"<p>Bygg varumärke och öka konverteringar genom målgruppsanpassat innehåll, annonser och engagemang.</p>",
+				"<p class='mb-1'>Vi hjälper dig hålla din webbplats säker, uppdaterad och stabil genom löpande underhåll, proaktiv support och kontinuerliga förbättringar.</p> <a class='link-body' href='/tjanster/underhall-support'>Läs mer -></a>",
 		},
 	];
 
@@ -75,27 +78,54 @@
 <Section sectionLayoutClass="cw-section-hero" class="pt-4" lines="XXXXX">
 	<Column span={6} class="pt-4 d-flex flex-column justify-between">
 		<div>
-			<h1 class="pl-1 lowercase">
+			<h1 class="pl-1 lowercase px-xs-1 py-xs-1">
 				Vi skapar <span class="highlight">oförglömliga</span> digitala upplevelser
 			</h1>
-			<p class="pl-1 hero mt-2">
+			<p class="pl-1 hero mt-2 hide-mobile">
 				Vi är en Stockholm-baserad digitalbyrå mer flera år <br /> av
 				erfarenhet av att skapa banbrytande applikationer <br /> och webbplatser.
 			</p>
 		</div>
-		<div class="mb-6">
-			<ColumnButton type="link" buttonText="BOKA ETT 20-MIN MÖTE" />
+		<div class="mb-6 hide-mobile">
+			<ColumnButton
+				type="button"
+				buttonText="BOKA ETT 20-MIN MÖTE"
+				onClick={() => ($showBookingForm = !$showBookingForm)}
+			/>
 			<ColumnButton
 				type="link"
+				href="om-oss"
 				borderTop={false}
-				buttonText="SE VÅRA TJÄNSTER"
+				buttonText="KONTAKTA OSS"
 			/>
 		</div>
 	</Column>
-	<Column span={6}>
-		<HeroComputer />
+	<Column span={6} class="d-flex flex-column justify-end pb-5">
+		<HeroComputerv2 />
+		<p class="pl-1 px-xs-1 hero mt-2 hide-desktop">
+			Vi är en Stockholm-baserad digitalbyrå mer flera år <br /> av
+			erfarenhet av att skapa banbrytande applikationer <br /> och webbplatser.
+		</p>
+		<div class="pt-xs-4 hide-desktop">
+			<ColumnButton
+				type="button"
+				buttonText="BOKA ETT 20-MIN MÖTE"
+				onClick={() => ($showBookingForm = !$showBookingForm)}
+			/>
+			<ColumnButton
+				type="link"
+				href="om-oss"
+				borderTop={false}
+				buttonText="KONTAKTA OSS"
+			/>
+		</div>
 	</Column>
-	<video src="/videos/cw_shadergradient_video.mp4" autoplay muted loop
+	<video
+		src="/videos/cw_shadergradient_video.mp4"
+		autoplay
+		muted
+		loop
+		playsinline
 	></video>
 </Section>
 <SectionDivider borderTop borderBottom></SectionDivider>

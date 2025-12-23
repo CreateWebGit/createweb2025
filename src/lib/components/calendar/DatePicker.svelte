@@ -1,4 +1,9 @@
 <script lang="ts">
+	interface Props {
+		changeSelectedDate: (selectedDate: Date) => void;
+	}
+
+	let { changeSelectedDate }: Props = $props();
 	//we store todays date to use as a reference
 	const today = new Date();
 
@@ -130,7 +135,7 @@
 	async function selectDate(d: Date) {
 		if (isPastDay(d) || isWeekend(d)) return;
 		selectedDate = d;
-		//await loadSlotsForDate(d)
+		changeSelectedDate(d);
 	}
 </script>
 
@@ -172,14 +177,15 @@
 	</div>
 </div>
 
-{selectedDate.toDateString()}
-
 <style lang="scss">
 	.month-picker {
 		display: flex;
 		flex-direction: column;
 		gap: 0.5rem;
-		max-width: 400px;
+		// max-width: 400px;
+		width: 100%;
+		padding: 1rem;
+		height: 100%;
 	}
 
 	.month-header {
@@ -214,13 +220,16 @@
 	.weeks {
 		display: grid;
 		grid-template-columns: repeat(7, 1fr);
+		height: 100%;
 		border-top: 1px solid var(--border-color);
+		border-left: 1px solid var(--border-color);
 	}
 
 	.weeks button,
 	.weeks .empty {
 		width: 100%;
-		aspect-ratio: 1 / 1;
+		// aspect-ratio: 1 / 1;
+		height: 100%;
 		font-size: 0.9rem;
 		border-right: 1px solid var(--border-color);
 		border-bottom: 1px solid var(--border-color);
@@ -247,7 +256,7 @@
 		font-weight: 600;
 	}
 
-	//we use disabled to mark past, and unavailable days
+	//we use disabled to mark past, and unavailable days, this still needs to be validated server side
 	.weeks button:disabled {
 		color: rgba(255, 255, 255, 0.25);
 		cursor: default;

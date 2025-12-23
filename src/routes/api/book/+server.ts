@@ -18,6 +18,7 @@ export const POST: RequestHandler = async ({ request }) => {
 
 	const calendar = getCalendar();
 
+	//TODO: lägg till mer användarinfo, start end email
 	const event = {
 		summary: `Möte med ${body.name || body.email}`,
 		description: "Bokad via https://createweb.se.",

@@ -22,16 +22,6 @@
 			url: "https://hiljalogistics.se",
 			screenshot: "/images/iphone_mockup/hilja.png",
 		},
-		{
-			name: "Example Domain",
-			url: "https://example.com",
-			screenshot: "",
-		},
-		{
-			name: "Createweb",
-			url: "https://createweb.se",
-			screenshot: "",
-		},
 	];
 
 	let element: HTMLElement;
@@ -98,7 +88,7 @@
 					in:slideUp={{ delay: 180, duration: 250, y: 40 }}
 					class="tabs-container"
 				>
-					<h3>Case</h3>
+					<h3 style="margin-bottom: 0.5rem">Våra case</h3>
 					<div class="tab-case-wrapper">
 						{#each tabs as tab}
 							<div

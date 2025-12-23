@@ -24,9 +24,10 @@
 	"dependencies": {
 		"@payloadcms/sdk": "^3.61.1",
 		"@types/node": "^24.5.2",
+		"bits-ui": "^2.14.4",
 		"googleapis": "^166.0.0",
 		"sass": "^1.93.2",
-		"svelte-wheel-picker": "^0.20.7",
-		"uuid": "^13.0.0"
+		"uuid": "^13.0.0",
+		"vaul-svelte": "^1.0.0-next.7"
 	}
 }

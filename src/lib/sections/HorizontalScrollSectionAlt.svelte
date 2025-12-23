@@ -113,7 +113,11 @@
 		</div>
 	</Column>
 
-	<Column span={12} class="py-2 py-xs-2">
+	<Column
+		start={{ lg: 2, xs: 1 }}
+		end={{ lg: 12, xs: 13 }}
+		class="py-2 px-2 gap-2 py-xs-2 cw-grid"
+	>
 		{#if activeTab}
 			{@html activeTab.content}
 		{/if}
@@ -213,5 +217,23 @@
 				background-color: rgba(255, 255, 255, 0.1);
 			}
 		}
+	}
+
+	/*
+	:global(.image-container-horizontal-scroll-alt) {
+		aspect-ratio: 4 / 3;
+		border: 1px solid var(--border-color);
+		overflow: hidden;
+
+		img {
+			height: 100%;
+			width: 100%;
+			object-fit: contain;
+		}
+	}
+	*/
+
+	.right-column {
+		background: red;
 	}
 </style>

@@ -6,6 +6,9 @@
 @use "$lib/styles/utilities.scss" as *;
 @use "$lib/styles/buttons.scss" as *;
 @use "$lib/styles/sections/hero.scss" as *;
+@use "$lib/styles/drawer.scss" as *;
+@use "$lib/styles/footer.scss" as *;
+@use "$lib/styles/booking.scss" as *;
 
 html {
 	color-scheme: dark;
@@ -52,10 +55,11 @@ body {
 	}
 
 	&::-webkit-scrollbar {
-	    display: none;
+		display: none;
 	}
 
 	//underlay for mega menu
+
 	&::after {
 		content: "";
 		position: fixed;
@@ -78,8 +82,6 @@ body {
 	}
 
 	&.slide-menu-open {
-	    overflow: hidden;
+		overflow: hidden;
 	}
 }
-
-//#101010XX <- alpha

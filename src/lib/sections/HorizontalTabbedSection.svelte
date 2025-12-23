@@ -67,7 +67,7 @@
 		transition: all 0.2s ease;
 
 		&.active {
-			border-color: var(--bw);
+			border-color: var(--accent-color);
 			color: var(--bw);
 		}
 	}

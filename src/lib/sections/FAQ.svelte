@@ -4,6 +4,7 @@
 	import ColumnButton from "../components/ColumnButton.svelte";
 	import FlexContainer from "../components/layout/FlexContainer.svelte";
 	import ColumnAccordion from "../components/ColumnAccordion.svelte";
+	import { showBookingForm } from "$lib/stores/layoutStore";
 
 	interface Props {
 		title?: string;
@@ -41,9 +42,14 @@
 		</div>
 
 		<FlexContainer class="hide-mobile mt-5" direction="column">
-			<ColumnButton type="link" buttonText="BEGÄR EN OFFERT" />
+			<ColumnButton
+				type="button"
+				onClick={() => ($showBookingForm = !$showBookingForm)}
+				buttonText="BOKA ETT 20-MIN MÖTE"
+			/>
 			<ColumnButton
 				type="link"
+				href="../om-oss"
 				buttonText="KONTAKTA OSS"
 				borderTop={false}
 			/>
@@ -63,9 +69,14 @@
 		/>
 
 		<FlexContainer class="hide-desktop pt-xs-4" direction="column">
-			<ColumnButton type="link" buttonText="BEGÄR EN OFFERT" />
+			<ColumnButton
+				type="button"
+				buttonText="BOKA ETT 20-MIN MÖTE"
+				onClick={() => ($showBookingForm = !$showBookingForm)}
+			/>
 			<ColumnButton
 				type="link"
+				href="../om-oss"
 				buttonText="KONTAKTA OSS"
 				borderTop={false}
 			/>

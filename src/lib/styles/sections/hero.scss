@@ -34,9 +34,9 @@
 		filter: saturate(0);
 		opacity: 0.4;
 		pointer-events: none;
+	}
 
-		@media (max-width: 768px) {
-			display: none;
-		}
+	@media (max-width: 768px) {
+		grid-template-rows: 1fr 0;
 	}
 }

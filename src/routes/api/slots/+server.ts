@@ -13,8 +13,8 @@ export const GET: RequestHandler = async ({ url }) => {
 
 	const [year, month, day] = dateParam.split("-").map(Number);
 
-	const startOfDay = new Date(Date.UTC(year, month - 1, day, 8, 0, 0)); // 08:00
-	const endOfDay = new Date(Date.UTC(year, month - 1, day, 17, 0, 0)); // 17:00
+	const startOfDay = new Date(Date.UTC(year, month - 1, day, 11, 0, 0)); // 08:00
+	const endOfDay = new Date(Date.UTC(year, month - 1, day, 15, 0, 0)); // 17:00
 
 	const calendar = getCalendar();
 

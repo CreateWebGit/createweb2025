@@ -6,6 +6,8 @@
 	import StripedContainer from "$src/lib/components/layout/StripedContainer.svelte";
 	import ColumnButton from "$src/lib/components/ColumnButton.svelte";
 
+	import { showBookingForm } from "$lib/stores/layoutStore";
+
 	//types
 	import type { AccordionItem } from "$lib/models/accordion";
 
@@ -19,11 +21,13 @@
 	let { title, description, accordionItems, children }: Props = $props();
 </script>
 
-<Section lines={"XXXXX"} sectionLayoutClass="cw-border-bottom">
-	<Column class="d-flex flex-column pt-4 pb-2" span={6}>
+<Section lines={"XXXXX"}>
+	<Column class="d-flex flex-column pt-4 pb-2 pt-xs-2" span={6}>
 		<div>
-			<h1 class="subpage-hero-heading ml-1">{@html title}</h1>
-			<p class="hero ml-1 mt-2 pr-10">{description}</p>
+			<h1 class="subpage-hero-heading ml-1 pb-xs-2">{@html title}</h1>
+			<p class="hero ml-1 mt-2 pr-10 pb-xs-4 hide-mobile">
+				{description}
+			</p>
 		</div>
 		<ColumnAccordion
 			class="mt-7 hide-mobile"
@@ -41,13 +45,19 @@
 				{@render children()}
 			{/if}
 		</StripedContainer>
+		<p class="hero ml-1 mt-2 pr-10 pb-xs-2 hide-desktop">{description}</p>
 		<FlexContainer class="mt-4 flex-column-xs">
 			<ColumnButton
-				type="link"
+				type="button"
 				borderRight={false}
 				buttonText="BOKA ETT MÖTE"
+				onClick={() => ($showBookingForm = !$showBookingForm)}
 			/>
-			<ColumnButton type="link" buttonText="BEGÄR EN OFFERT" />
+			<ColumnButton
+				type="link"
+				href="../om-oss"
+				buttonText="KONTAKTA OSS"
+			/>
 		</FlexContainer>
 	</Column>
 </Section>

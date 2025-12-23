@@ -3,8 +3,23 @@
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<meta name="theme-color" content="#222A36"/>
-		<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+		<meta name="theme-color" content="#222A36" />
+		<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+		<script>
+			(function () {
+				var ua = navigator.userAgent;
+				// Safari (both macOS + iOS), not Chrome/Edge/Firefox
+				var isSafari =
+					ua.includes("Safari") &&
+					!ua.includes("Chrome") &&
+					!ua.includes("Chromium") &&
+					!ua.includes("Edg") &&
+					!ua.includes("Firefox");
+
+				if (isSafari)
+					document.documentElement.classList.add("is-safari");
+			})();
+		</script>
 		%sveltekit.head%
 	</head>
 	<body data-sveltekit-preload-data="hover">

@@ -11,6 +11,7 @@
 	import SlideMenu from "$components/SlideMenu.svelte";
 
 	import Breadcrumbs from "$components/Breadcrumbs.svelte";
+	import { showBookingForm } from "$lib/stores/layoutStore";
 	let header: HTMLElement;
 
 	let slideMenuOpen = $state(false);
@@ -53,12 +54,14 @@
 		slideMenuOpen = false;
 
 		let prevScrollpos = 0;
+		const isMobile = window.matchMedia("(max-width: 768px)");
 
 		function handleHeaderScroll() {
 			const currentScrollPos = window.scrollY;
+			const disableHideOnMobile = isMobile.matches && $disableHeaderHide;
 
-			//if disableHeaderHide is true, add the `scrolled` class
-			if ($disableHeaderHide) {
+			//if disableHeaderHide is true, add the `scrolled` class, only on mobile of course
+			if (disableHideOnMobile) {
 				header?.classList.add("scrolled");
 			} else if (prevScrollpos <= currentScrollPos) {
 				header?.classList.add("scrolled");
@@ -77,12 +80,19 @@
 	<div class="header-container">
 		<div class="logo-container">
 			{#if !$lightMode}
-				<img src="/images/cw_logo.svg" alt="createweb logotyp dark" />
+				<a href="/"
+					><img
+						src="/images/cw_logo.svg"
+						alt="createweb logotyp dark"
+					/></a
+				>
 			{:else}
-				<img
-					src="/images/cw_logo_light.svg"
-					alt="createweb logotyp light"
-				/>
+				<a href="/"
+					><img
+						src="/images/cw_logo_light.svg"
+						alt="createweb logotyp light"
+					/></a
+				>
 			{/if}
 		</div>
 		<nav>
@@ -107,6 +117,7 @@
 					</div>
 					<MegaMenu />
 				</li>
+				<!--
 				<li>
 					<a
 						href="/case"
@@ -121,6 +132,7 @@
 						class="link-navigation">Nyheter</a
 					>
 				</li>
+				-->
 				<li>
 					<a
 						href="/om-oss"
@@ -131,7 +143,12 @@
 			</ul>
 		</nav>
 		<div class="button-container">
-			<a class="cw-button--primary small" href="">Begär en offert</a>
+			<!-- <a class="cw-button--primary small" href="">Begär en offert</a> -->
+			<button
+				class="cw-button--primary small"
+				onclick={() => ($showBookingForm = !$showBookingForm)}
+				>Boka ett möte</button
+			>
 		</div>
 		<button
 			onclick={() => (slideMenuOpen = !slideMenuOpen)}

@@ -39,13 +39,19 @@
 
 <div class="mega-menu">
 	<Section sectionLayoutClass="height-100" borderTop borderBottom>
-		<Column class="quote-col" span={4} borderLeft borderRight>
+		<Column class="quote-col px-2 py-2" span={4} borderLeft borderRight>
 			<!-- {activeLink} -->
+			<h4 class="force-lowercase">
+				Här på Createweb fokuserar vi på konvertering. Bryt dig loss och
+				ta ditt varumärke till <span class="highlight">nästa nivå</span
+				>.
+			</h4>
+			<p><a href="" class="link-body">Boka ett 20-minuters möte -></a></p>
 			<div class="bottom-left-cap">
 				<Plus color="var(--accent-color)" />
 			</div>
 		</Column>
-		<Column class="link-col px-1 py-2" span={4}>
+		<Column borderRight class="link-col px-2 py-2" span={4}>
 			<p class="subheading text-accent mb-1">Våra tjänster</p>
 			{#each links as link}
 				<a
@@ -55,7 +61,7 @@
 				>
 			{/each}
 		</Column>
-		<Column class="text-col px-1 py-2" span={4} borderRight>
+		<Column class="text-col px-2 py-2" span={4} borderRight>
 			{#each links as link}
 				{#if activeLink === link.url}
 					<div class="text-container">

@@ -8,6 +8,7 @@
 
 	import type { AccordionItem } from "$src/lib/models/accordion";
 	import FlexContainer from "../components/layout/FlexContainer.svelte";
+	import { showBookingForm } from "$lib/stores/layoutStore";
 
 	interface Props {
 		accordionItems?: AccordionItem[];
@@ -23,11 +24,11 @@
 </script>
 
 <Section lines="XXX-X" borderBottom class="py-4">
-	<Column span={12} class="py-4">
+	<Column span={12} class="py-4 py-xs-2 px-xs-1">
 		<p class="subheading text-accent text-center">DET HÄR KAN VI</p>
 		<h2 class="text-center">Det här hjälper vi <br /> företag att göra</h2>
 	</Column>
-	<Column span={6}>
+	<Column span={6} class="pb-xs-4">
 		<StripedContainer borderRight={false} class="aspect-ratio-1-1">
 			<div class="mockup-container">
 				{#if currentAccordionActive === 0}
@@ -37,14 +38,14 @@
 						src="/images/first_page/mockups/vscode.png"
 						alt="ipad mockup"
 					/>
-				{:else if currentAccordionActive === 1}
+				{:else if currentAccordionActive === 2}
 					<img
 						transition:fade
 						class="mockup-screen"
 						src="/images/first_page/mockups/xcode.png"
 						alt="ipad mockup"
 					/>
-				{:else if currentAccordionActive === 2}
+				{:else if currentAccordionActive === 1}
 					<img
 						transition:fade
 						class="mockup-screen"
@@ -70,10 +71,18 @@
 			items={accordionItems}
 		/>
 	</Column>
-	<Column span={12} class="py-4">
+	<Column span={12} class="py-4 pt-xs-4">
 		<FlexContainer class="flex-column-xs">
-			<ColumnButton type="link" buttonText="BOKA ETT 20-MIN MÖTE" />
-			<ColumnButton type="link" buttonText="VÅRA TJÄNSTER" />
+			<ColumnButton
+				type="button"
+				onClick={() => ($showBookingForm = !$showBookingForm)}
+				buttonText="BOKA ETT 20-MIN MÖTE"
+			/>
+			<ColumnButton
+				type="link"
+				href="/om-oss"
+				buttonText="KONTAKTA OSS"
+			/>
 		</FlexContainer>
 	</Column>
 </Section>

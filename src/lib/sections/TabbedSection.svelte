@@ -14,6 +14,7 @@
 	type Group = {
 		id: string;
 		label: string; // e.g. "SEO", "SEM"
+		title: string;
 		items: Item[];
 	};
 
@@ -60,7 +61,7 @@
 		if (!exists) {
 			activeItemId = activeGroup.items[0].id;
 		}
-
+		//TODO: check screen width
 		const observer = new IntersectionObserver(
 			(entries) => {
 				const entry = entries[0];
@@ -113,19 +114,27 @@
 				</div>
 			{/if}
 
+			<!-- {groups[parseInt(activeGroupId)].title} -->
+
 			<div class="d-flex flex-column justify-center h-100 hide-mobile">
-				{#if activeGroup}
-					{#each activeGroup.items as item}
-						<button
-							class="item-button"
-							class:active={activeItemId === item.id}
-							onclick={() => (activeItemId = item.id)}
-						>
-							<p class="title bold text-white">{item.title}</p>
-							<p class="ingress">{item.ingress}</p>
-						</button>
-					{/each}
-				{/if}
+				<h4 class="pl-1 pb-2">{activeGroup?.title}</h4>
+
+				<div class="d-flex flex-column">
+					{#if activeGroup}
+						{#each activeGroup.items as item}
+							<button
+								class="item-button"
+								class:active={activeItemId === item.id}
+								onclick={() => (activeItemId = item.id)}
+							>
+								<p class="title bold text-white">
+									{item.title}
+								</p>
+								<p class="ingress">{item.ingress}</p>
+							</button>
+						{/each}
+					{/if}
+				</div>
 			</div>
 		</Column>
 
@@ -196,27 +205,30 @@
 		}
 	}
 
-	:global(.tabbed-section-content) {
-		display: flex;
-		flex-direction: column;
-		gap: 1.5rem;
-		padding: 1rem;
+	:global {
+		.tabbed-section-content {
+			display: flex;
+			flex-direction: column;
+			gap: 1.5rem;
+			padding: 1rem;
+			min-height: 36.125rem;
 
-		:global(.image-container) {
-			background-color: rgba(255, 255, 255, 0.15);
-			border: 1px solid var(--border-color);
-			height: 24.375rem;
-			width: 100%;
-
-			@media (max-width: 768px) {
-				height: 10rem;
-				margin-top: 2rem;
-			}
-
-			img {
-				height: 100%;
+			.image-container {
+				background-color: rgba(255, 255, 255, 0.15);
+				border: 1px solid var(--border-color);
+				height: 24.375rem;
 				width: 100%;
-				object-fit: cover;
+
+				@media (max-width: 768px) {
+					height: 10rem;
+					margin-top: 2rem;
+				}
+
+				img {
+					height: 100%;
+					width: 100%;
+					object-fit: cover;
+				}
 			}
 		}
 	}

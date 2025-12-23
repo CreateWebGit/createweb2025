@@ -105,6 +105,7 @@ header {
 		.logo-container {
 			padding-left: 1rem;
 			justify-self: flex-start;
+			cursor: pointer;
 
 			img {
 				max-width: 10rem;
@@ -194,6 +195,12 @@ header {
 
 		.quote-col {
 			position: relative;
+			font-weight: 500;
+
+			p {
+				font-weight: 400;
+				margin-top: 0.5rem;
+			}
 		}
 
 		.link-col {
@@ -279,4 +286,51 @@ header {
 			}
 		}
 	}
+}
+
+.image-container-horizontal-scroll-alt {
+	aspect-ratio: 4 / 3;
+	border: 1px solid var(--border-color);
+	overflow: hidden;
+
+	img {
+		height: 100%;
+		width: 100%;
+		object-fit: cover;
+	}
+}
+
+.se-marketing-image-container {
+	background-color: rgba(255, 255, 255, 0.15);
+	border: 1px solid var(--border-color);
+	height: 24.375rem;
+	width: 100%;
+
+	@media (max-width: 768px) {
+		height: 10rem;
+		margin-top: 2rem;
+	}
+
+	img {
+		height: 100%;
+		width: 100%;
+		object-fit: cover;
+	}
+}
+
+.light-tabbed-section-image-container {
+	aspect-ratio: 1 / 1;
+	height: 100%;
+	width: 100%;
+	padding: 2rem;
+
+	img {
+		height: 100%;
+		width: 100%;
+		object-fit: cover;
+	}
+}
+
+.background-secondary {
+	background-color: var(--secondary-container-color);
 }

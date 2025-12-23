@@ -33,7 +33,7 @@
 			<p class="subheading pl-1 pl-xs-1 text-accent">{subheading}</p>
 			<h2 class="pl-1 pl-xs-1">{@html heading}</h2>
 			<p
-				class="pl-1 pr-1 mt-2 pl-xs-1 pb-xs-2"
+				class="pl-1 pr-1 mt-2 pl-xs-1 pb-xs-2 pb-2"
 				style="white-space: pre-line"
 			>
 				{@html body}

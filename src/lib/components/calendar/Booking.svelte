@@ -175,7 +175,7 @@
 	async function submit() {
 		console.log("boka mötet");
 		const res = await fetch(
-			`http://server.createweb.se:3000/api/bokningar`,
+			`https://server.createweb.se:3000/api/bokningar`,
 			{
 				method: "POST",
 				headers: { "Content-Type": "application/json" },

@@ -22,14 +22,11 @@
 		console.log("submitting form");
 		submitting = true;
 
-		const res = await fetch(
-			`https://server.createweb.se:3000/api/contact`,
-			{
-				method: "POST",
-				headers: { "Content-Type": "application/json" },
-				body: JSON.stringify(contactForm),
-			}
-		);
+		const res = await fetch(`https://server.createweb.se/api/contact`, {
+			method: "POST",
+			headers: { "Content-Type": "application/json" },
+			body: JSON.stringify(contactForm),
+		});
 
 		if (!res.ok) {
 			throw new Error(await res.text());

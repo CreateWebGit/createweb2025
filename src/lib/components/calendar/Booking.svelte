@@ -174,18 +174,21 @@
 
 	async function submit() {
 		console.log("boka mötet");
-		const res = await fetch(`http://localhost:3000/api/bokningar`, {
-			method: "POST",
-			headers: { "Content-Type": "application/json" },
-			body: JSON.stringify({
-				...booking,
-				selectedTime: {
-					start: formatTime(booking.selectedTime.start),
-					end: formatTime(booking.selectedTime.end),
-				},
-			}),
-			// credentials: 'include'
-		});
+		const res = await fetch(
+			`http://server.createweb.se:3000/api/bokningar`,
+			{
+				method: "POST",
+				headers: { "Content-Type": "application/json" },
+				body: JSON.stringify({
+					...booking,
+					selectedTime: {
+						start: formatTime(booking.selectedTime.start),
+						end: formatTime(booking.selectedTime.end),
+					},
+				}),
+				// credentials: 'include'
+			}
+		);
 
 		if (!res.ok) {
 			throw new Error(await res.text());

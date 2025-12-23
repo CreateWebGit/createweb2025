@@ -1,4 +1,4 @@
-<!-- Case/case -->
+<!-- Case/case
 <script lang="ts">
     import Header from '$components/Header.svelte'
     import Section from '$components/Section.svelte'
@@ -12,4 +12,4 @@
         <h1>Case</h1>
     </Column>
 </Section>
-<Footer/>
+<Footer/> -->

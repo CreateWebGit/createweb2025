@@ -14,7 +14,7 @@
 	type Group = {
 		id: string;
 		label: string; // e.g. "SEO", "SEM"
-		title: string;
+		title?: string;
 		items: Item[];
 	};
 

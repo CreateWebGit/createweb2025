@@ -2,7 +2,7 @@
 	import Section from "$components/grid/Section.svelte";
 	import Column from "$components/grid/Column.svelte";
 	import StripedContainer from "../components/layout/StripedContainer.svelte";
-	import { lightMode } from "$stores/themeStore";
+	import { setLightModeSource } from "$stores/themeStore";
 
 	type StickyTab = {
 		id: string;
@@ -25,10 +25,11 @@
 	let progress = $state(0);
 
 	let wrapperEl: HTMLDivElement | null = null;
+	const lightModeSource = Symbol("HorizontalScrollSection");
 
 	let steps = $derived(tabs.length);
 	let activeTab = $derived(
-		steps === 0 ? null : tabs[Math.min(activeIndex, steps - 1)]
+		steps === 0 ? null : tabs[Math.min(activeIndex, steps - 1)],
 	);
 
 	$effect(() => {
@@ -55,15 +56,10 @@
 
 		const observer = new IntersectionObserver(
 			([entry]) => {
-				console.log("is intersecting");
 				const isLight = entry.intersectionRatio >= 0.25;
-				lightMode.set(isLight);
-				document.documentElement.classList.toggle(
-					"light-mode",
-					isLight
-				);
+				setLightModeSource(lightModeSource, isLight);
 			},
-			{ threshold: [0, 0.25, 1] }
+			{ threshold: [0, 0.25, 1] },
 		);
 
 		observer.observe(wrapperEl);
@@ -71,6 +67,7 @@
 		return () => {
 			window.removeEventListener("scroll", onScroll);
 			observer.disconnect();
+			setLightModeSource(lightModeSource, false);
 		};
 	});
 

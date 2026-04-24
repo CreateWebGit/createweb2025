@@ -12,9 +12,10 @@
 
 	interface Props {
 		accordionItems?: AccordionItem[];
+		borderBottom?: boolean;
 	}
 
-	let { accordionItems }: Props = $props();
+	let { accordionItems, borderBottom }: Props = $props();
 
 	let currentAccordionActive = $state(0);
 
@@ -23,7 +24,7 @@
 	};
 </script>
 
-<Section lines="XXX-X" borderBottom class="py-4">
+<Section lines="XXX-X" {borderBottom} class="py-0">
 	<Column span={12} class="py-4 py-xs-2 px-xs-1">
 		<p class="subheading text-accent text-center">DET HÄR KAN VI</p>
 		<h2 class="text-center">Det här hjälper vi <br /> företag att göra</h2>

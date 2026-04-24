@@ -17,6 +17,7 @@
 	import SectionDivider from "$components/layout/SectionDivider.svelte";
 
 	import Polaroid from "$src/lib/components/Polaroid.svelte";
+	import Seo from "$lib/components/Seo.svelte";
 
 	//accordion content config
 	const accordionItems: AccordionItem[] = [
@@ -314,6 +315,12 @@
 	];
 </script>
 
+<Seo
+	title="Sandbox | CreateWeb"
+	description="Intern testsida för UI-komponenter och sektioner."
+	path="/sandbox"
+	noindex={true}
+/>
 <div style="height: 25rem; width: 40rem; background: red; position: relative;">
 	<Polaroid position="absolute" left={24} top={24} />
 </div>

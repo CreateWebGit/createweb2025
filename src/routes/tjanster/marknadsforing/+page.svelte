@@ -12,6 +12,7 @@
 	import HorizontalScrollSection from "$lib/sections/HorizontalScrollSection.svelte";
 	import FAQ from "$lib/sections/FAQ.svelte";
 	import SectionDivider from "$components/layout/SectionDivider.svelte";
+	import Seo from "$lib/components/Seo.svelte";
 
 	//types
 	import type { AccordionItem } from "$src/lib/models/accordion";
@@ -134,7 +135,7 @@
 	];
 
 	const centeredTextContent = {
-		title: "SEO vs SEM - vad är skillnaden?",
+		title: "SEO vs SEM – vad är skillnaden?",
 		body: `
             <p>SEO bygger långsiktig synlighet genom att optimera din webbplats så att du rankar naturligt i sökresultaten. SEM ger snabb effekt genom betalda annonser som visas högst upp när användaren söker efter ditt erbjudande.</p>
             <p class="mt-1">Tillsammans skapar de en komplett strategi: SEO lägger grunden för stabil organisk trafik medan SEM ger direkt räckvidd när du behöver resultat snabbt.</p>
@@ -283,6 +284,19 @@
 	];
 </script>
 
+<Seo
+	title="Digital marknadsföring | CreateWeb"
+	description="Vi bygger en mätbar marknadsföringsstrategi med SEO, SEM och sociala medier för att öka synlighet, trafik och konverteringar."
+	path="/tjanster/marknadsforing"
+	image="/images/tjanster/marknadsforing/hero_image.png"
+	keywords={[
+		"digital marknadsföring",
+		"SEO",
+		"SEM",
+		"sociala medier",
+		"createweb",
+	]}
+/>
 <Header />
 
 <Hero
@@ -303,7 +317,7 @@
 
 <Section lines="XX-XX" borderBottom>
 	<Column span={3}></Column>
-	<Column span={6} class="py-2 py-xs-2">
+	<Column span={6} class="py-4 py-xs-2">
 		<p class="subheading text-accent text-center">SÖKMOTORER</p>
 		<h2 class="text-center px-2">
 			Smartare sökstrategi för långsiktig tillväxt
@@ -316,6 +330,7 @@
 <CenteredText content={centeredTextContent} />
 <SectionDivider borderTop borderBottom />
 <HorizontalTabbedSection
+	borderBottom={false}
 	heading={`en strategisk del av din <br class="hide-mobile"/> digitala närvaro`}
 	subheading="sociala medier"
 	tabs={socialMediaTabs}
@@ -327,6 +342,7 @@
 	tabs={horizontalScrollTabs}
 /> -->
 
+<SectionDivider borderTop borderBottom />
 <FAQ
 	{accordionItems}
 	imageUrl="/images/tjanster/marknadsforing/faq_image.png"

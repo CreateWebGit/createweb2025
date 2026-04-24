@@ -6,6 +6,7 @@
 	import Footer from "$components/layout/Footer.svelte";
 	import LightTabbedSection from "$src/lib/sections/LightTabbedSection.svelte";
 	import HeroComputerv2 from "$src/lib/components/HeroComputerv2.svelte";
+	import Seo from "$lib/components/Seo.svelte";
 
 	//horizontal scroll section content config
 	const lightScrollTabs = [
@@ -36,6 +37,13 @@
 	];
 </script>
 
+<Seo
+	title="Apputveckling | CreateWeb"
+	description="Skalbar apputveckling med fokus på användarupplevelse, prestanda och stabil teknisk grund."
+	path="/tjanster/apputveckling"
+	keywords={["apputveckling", "digital produktutveckling", "createweb"]}
+	noindex={true}
+/>
 <!-- 
 <Header />
 <Section style="height: 100vh" lines="XXXXX">

@@ -14,11 +14,8 @@ h1,
 	font-weight: 900;
 	text-transform: uppercase;
 
-	&.lowercase {
-		font-weight: 700;
-		text-transform: none;
-		font-size: 4.35rem;
-		letter-spacing: -0.02em;
+	&.home-hero {
+		font-size: 4rem;
 
 		@media (max-width: 768px) {
 			font-size: 52px;
@@ -30,10 +27,7 @@ h1,
 	}
 
 	&.subpage-hero-heading {
-		text-transform: none;
-		letter-spacing: -0.02em;
-		font-size: 4rem;
-		font-weight: 500;
+		font-size: 3rem;
 
 		@media (max-width: 768px) {
 			font-size: 36px;

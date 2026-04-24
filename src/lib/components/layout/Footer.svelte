@@ -22,7 +22,7 @@
 					visible = false;
 				}
 			},
-			{ threshold: 0.5 }
+			{ threshold: 0.5 },
 		);
 
 		if (!el) return;
@@ -127,7 +127,7 @@
 				span={{ lg: 6, xs: 6 }}
 				class="d-flex align-center pl-1 pl-xs-1"
 			>
-				<p class="subheading">&copy; Createweb 2025</p>
+				<p class="subheading">&copy; Createweb 2026</p>
 			</Column>
 			<Column
 				span={{ lg: 6, xs: 6 }}

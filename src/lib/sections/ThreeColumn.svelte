@@ -1,6 +1,9 @@
 <script lang="ts">
 	import Section from "$src/lib/components/grid/Section.svelte";
 	import Column from "$src/lib/components/grid/Column.svelte";
+	import SvelteIcon from "../components/icons/SvelteIcon.svelte";
+	import MongodeIcon from "../components/icons/MongodeIcon.svelte";
+	import PayloadIcon from "../components/icons/PayloadIcon.svelte";
 </script>
 
 <Section lines="X---X">
@@ -13,7 +16,9 @@
 
 	<Column span={4} class="stack-column py-8 py-xs-2">
 		<p class="subheading text-center text-accent">Frontend</p>
-		<div class="stack-icon-container"></div>
+		<div class="stack-icon-container">
+			<SvelteIcon />
+		</div>
 
 		<h3 class="text-center">Svelte</h3>
 		<p class="text-center">
@@ -24,7 +29,9 @@
 	</Column>
 	<Column span={4} class="stack-column py-8 py-xs-2">
 		<p class="subheading text-center text-accent">Backend</p>
-		<div class="stack-icon-container"></div>
+		<div class="stack-icon-container">
+			<MongodeIcon />
+		</div>
 
 		<h3 class="text-center">Node + MongoDB</h3>
 		<p class="text-center">
@@ -35,7 +42,9 @@
 	</Column>
 	<Column span={4} class="stack-column py-8 py-xs-2">
 		<p class="subheading text-center text-accent">CMS</p>
-		<div class="stack-icon-container"></div>
+		<div class="stack-icon-container">
+			<PayloadIcon />
+		</div>
 
 		<h3 class="text-center">PayloadCMS</h3>
 		<p class="text-center">
@@ -65,7 +74,9 @@
 			height: 8rem;
 			width: 8rem;
 			border: 1px solid var(--border-color);
-			background-color: #16202f;
+			background-color: light-dark(#e3e3e3, #16202f);
+			display: grid;
+			place-items: center;
 		}
 	}
 </style>

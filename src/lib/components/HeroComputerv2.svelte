@@ -49,7 +49,7 @@
 			position: absolute;
 			bottom: 5rem;
 			right: -0.5rem;
-			z-index: 200;
+			z-index: 5;
 			display: flex;
 			align-items: center;
 			padding: 2rem;

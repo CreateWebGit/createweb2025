@@ -3,8 +3,10 @@
 	import "$src/app.scss";
 	import { showBookingForm } from "$lib/stores/layoutStore";
 	import Booking from "$src/lib/components/calendar/Booking.svelte";
+	import { onMount } from "svelte";
+	import { scale } from "svelte/transition";
 
-	let { children } = $props();
+	let { children, data: content } = $props();
 
 	$effect(() => {
 		//lock document when bookingForm is open
@@ -23,6 +25,10 @@
 			body.style.overflow = prevBody;
 			html.style.overflow = prevHtml;
 		};
+	});
+
+	onMount(() => {
+		console.log(content);
 	});
 </script>
 

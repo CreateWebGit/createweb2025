@@ -23,6 +23,7 @@
 
 	import Hero from "$lib/sections/Hero.svelte";
 	import ThreeColumn from "$src/lib/sections/ThreeColumn.svelte";
+	import Seo from "$lib/components/Seo.svelte";
 
 	//types
 	import type { AccordionItem } from "$src/lib/models/accordion";
@@ -122,6 +123,19 @@
 	];
 </script>
 
+<Seo
+	title="Webbutveckling | CreateWeb"
+	description="Vi utvecklar snabba och skräddarsydda webbplatser och webbappar med fokus på frontend, backend, prestanda och långsiktig kvalitet."
+	path="/tjanster/webbutveckling"
+	image="/images/tjanster/webbutveckling/webdev.jpg"
+	keywords={[
+		"webbutveckling",
+		"frontend utveckling",
+		"backend utveckling",
+		"prestandaoptimering",
+		"createweb",
+	]}
+/>
 <Header />
 
 <Hero

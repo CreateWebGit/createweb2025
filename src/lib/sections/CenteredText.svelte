@@ -20,13 +20,13 @@
 	<Column span={3}></Column>
 	<Column span={6}>
 		<div class="px-1 px-xs-1">
-			<h3 class="mb-2">{content.title}</h3>
+			<h2 class="mb-2">{content.title}</h2>
 			<div>
 				{@html content.body}
 			</div>
 		</div>
 
-		<FlexContainer class="mt-2 flex-column-xs">
+		<FlexContainer class="pt-4 flex-column-xs">
 			<ColumnButton
 				width={1}
 				borderRight

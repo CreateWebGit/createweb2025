@@ -13,6 +13,7 @@
 	import CenteredText from "$src/lib/sections/CenteredText.svelte";
 	import SimpleContact from "$src/lib/sections/SimpleContact.svelte";
 	import { showBookingForm } from "$lib/stores/layoutStore";
+	import Seo from "$lib/components/Seo.svelte";
 
 	let CenteredTextContent = {
 		title: "Vår filosofi",
@@ -20,6 +21,13 @@
 	};
 </script>
 
+<Seo
+	title="Om oss | CreateWeb"
+	description="Vi bygger webb som faktiskt används. Läs om vårt arbetssätt, vår filosofi och teamet bakom CreateWeb."
+	path="/om-oss"
+	image="/images/om-oss/om-oss-hero.jpg"
+	keywords={["om createweb", "digitalbyrå stockholm", "webbutveckling"]}
+/>
 <Header />
 
 <Section lines={"XXXXX"}>

@@ -10,6 +10,7 @@
 	import HorizontalScrollSection from "$src/lib/sections/HorizontalScrollSection.svelte";
 	import HorizontalTabbedSection from "$src/lib/sections/HorizontalTabbedSection.svelte";
 	import TabbedSection from "$src/lib/sections/TabbedSection.svelte";
+	import Seo from "$lib/components/Seo.svelte";
 
 	import type { AccordionItem } from "$src/lib/models/accordion";
 
@@ -144,6 +145,13 @@
 	];
 </script>
 
+<Seo
+	title="Konsultation och teamförstärkning | CreateWeb"
+	description="Erfaren förstärkning till ert team med utvecklare och designers som snabbt kommer in i arbetet och levererar med tydlig struktur."
+	path="/tjanster/konsultation"
+	keywords={["konsultation", "teamförstärkning", "utvecklarkonsult", "createweb"]}
+	noindex={true}
+/>
 <Header />
 <Hero
 	title={`Erfaren <span class="highlight">förstärkning</span> till ert team – snabbt, tryggt och flexibelt.`}

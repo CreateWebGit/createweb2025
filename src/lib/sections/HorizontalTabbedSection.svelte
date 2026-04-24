@@ -2,13 +2,19 @@
 	import Section from "$components/grid/Section.svelte";
 	import Column from "$components/grid/Column.svelte";
 
-	const { subheading, heading, tabs } = $props<{
+	const {
+		subheading,
+		heading,
+		tabs,
+		borderBottom = true,
+	} = $props<{
 		subheading?: string;
 		heading?: string;
 		tabs: {
 			label: string;
 			content: string;
 		}[];
+		borderBottom?: boolean;
 	}>();
 
 	let activeTab: number = $state(0);
@@ -18,8 +24,8 @@
 	};
 </script>
 
-<Section lines={"X---X"} borderBottom={true}>
-	<Column span={12} class="py-3 py-xs-2">
+<Section lines={"X---X"} {borderBottom}>
+	<Column span={12} class="py-4 py-xs-2">
 		{#if subheading}
 			<p class="subheading text-accent text-center">{subheading}</p>
 		{/if}

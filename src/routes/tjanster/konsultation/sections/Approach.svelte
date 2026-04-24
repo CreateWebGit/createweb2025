@@ -1,8 +1,8 @@
 <script lang="ts">
-    import Section from "$components/grid/Section.svelte";
-    import Column from "$components/grid/Column.svelte";
+	import Section from "$components/grid/Section.svelte";
+	import Column from "$components/grid/Column.svelte";
 	import StripedContainer from "$components/layout/StripedContainer.svelte";
-    import { lightMode } from "$stores/themeStore";
+	import { setLightModeSource } from "$stores/themeStore";
 
     type TabId = "tab-1" | "tab-2" | "tab-3" | "tab-4";
 
@@ -16,8 +16,9 @@
     let activeIndex = $state(0);
     let progress = $state(0); // 0–1
 
-    let wrapperEl: HTMLDivElement | null = null;
-    const steps = tabs.length;
+	let wrapperEl: HTMLDivElement | null = null;
+	const lightModeSource = Symbol("Approach");
+	const steps = tabs.length;
 
     const activeTab = $derived(tabs[activeIndex]);
 
@@ -25,9 +26,7 @@
     $effect(() => {
         if (!wrapperEl) return;
 
-        const html = document.documentElement;
-
-        const onScroll = () => {
+		const onScroll = () => {
             const rect = wrapperEl!.getBoundingClientRect();
             const vh = window.innerHeight;
 
@@ -49,27 +48,24 @@
         window.addEventListener("scroll", onScroll, { passive: true });
         onScroll(); //init immidietly
 
-        const observer = new IntersectionObserver(
-            ([entry]) => {
-                const isLight = entry.intersectionRatio >= 0.25;
+		const observer = new IntersectionObserver(
+			([entry]) => {
+				const isLight = entry.intersectionRatio >= 0.25;
 
-                // update store
-                lightMode.set(isLight);
-
-                // update html tag (always from this component)
-                document.documentElement.classList.toggle("light-mode", isLight);
-            },
-            { threshold: [0, 0.25, 1] }
-        );
+				setLightModeSource(lightModeSource, isLight);
+			},
+			{ threshold: [0, 0.25, 1] }
+		);
 
         observer.observe(wrapperEl);
 
         //clean up onscroll and observer
-        return () => {
-            window.removeEventListener("scroll", onScroll);
-            observer.disconnect();
-        };
-    });
+		return () => {
+			window.removeEventListener("scroll", onScroll);
+			observer.disconnect();
+			setLightModeSource(lightModeSource, false);
+		};
+	});
 
     const scrollToTab = (index: number) => {
         //TODO: refactor this overengineered abomination

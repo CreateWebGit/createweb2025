@@ -15,6 +15,7 @@
 	import type { AccordionItem } from "$src/lib/models/accordion";
 	import { onMount } from "svelte";
 	import HeroComputerv2 from "$src/lib/components/HeroComputerv2.svelte";
+	import Seo from "$lib/components/Seo.svelte";
 
 	//faq
 	const accordionItems: AccordionItem[] = [
@@ -74,11 +75,23 @@
 	let imageUrl = "/images/first_page/ScreenVS.svg";
 </script>
 
+<Seo
+	title="CreateWeb | Digitalbyrå i Stockholm för webb, marknadsföring och support"
+	description="Vi skapar oförglömliga digitala upplevelser med webbutveckling, datadriven marknadsföring och löpande underhåll. Boka ett 20-minuters möte."
+	path="/"
+	keywords={[
+		"digitalbyrå stockholm",
+		"webbutveckling",
+		"digital marknadsföring",
+		"underhåll och support",
+		"createweb",
+	]}
+/>
 <Header />
 <Section sectionLayoutClass="cw-section-hero" class="pt-4" lines="XXXXX">
 	<Column span={6} class="pt-4 d-flex flex-column justify-between">
 		<div>
-			<h1 class="pl-1 lowercase px-xs-1 py-xs-1">
+			<h1 class="home-hero pl-1 px-xs-1 py-xs-1">
 				Vi skapar <span class="highlight">oförglömliga</span> digitala upplevelser
 			</h1>
 			<p class="pl-1 hero mt-2 hide-mobile">
@@ -130,6 +143,7 @@
 </Section>
 <SectionDivider borderTop borderBottom></SectionDivider>
 <TwoColAccordion accordionItems={whatWeDoItems} />
+<SectionDivider borderTop borderBottom></SectionDivider>
 <Case />
 <SectionDivider borderTop borderBottom></SectionDivider>
 <FAQ {accordionItems} {imageUrl} />

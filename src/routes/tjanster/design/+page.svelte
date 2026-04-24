@@ -3,6 +3,7 @@
 	import Pulse from "$src/lib/components/Pulse.svelte";
 	import WheelPicker from "$src/lib/components/WheelPicker.svelte";
 	import Booking from "$src/lib/components/calendar/Booking.svelte";
+	import Seo from "$lib/components/Seo.svelte";
 
 	let data = [
 		{ value: 1, label: "Option 1" },
@@ -11,6 +12,12 @@
 	];
 </script>
 
+<Seo
+	title="Design-labb | CreateWeb"
+	description="Intern testsida för design- och bokningskomponenter."
+	path="/tjanster/design"
+	noindex={true}
+/>
 <!-- <DatePicker /> -->
 <!-- <WheelPicker style="height: 200px; width: 100%" /> -->
 <!-- <Pulse></Pulse> -->

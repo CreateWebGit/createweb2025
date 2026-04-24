@@ -19,7 +19,7 @@
 	let { hasBorderTop = false, hasBorderBottom = false }: Props = $props();
 </script>
 
-<Section lines={"X---X"} class="py-6 py-xs-2">
+<Section lines={"X---X"} class="py-4 py-xs-2">
 	<Column span={12}>
 		<p class="subheading text-accent text-center">Ett urval av våra case</p>
 		<h2 class="text-center">PROJEKT VI ÄR STOLTA ÖVER</h2>
@@ -222,6 +222,9 @@
 	:global(.mockups-container) {
 		position: relative;
 		max-height: 43.75rem;
+		@media (min-width: 768px) {
+			max-height: 53.125rem;
+		}
 	}
 
 	:global(.phone-container) {

@@ -22,6 +22,11 @@
 			url: "https://hiljalogistics.se",
 			screenshot: "/images/iphone_mockup/hilja.png",
 		},
+		{
+			name: "Green Hermitage - Vegetarisk restaurang i Gamla Stan, Stockholm",
+			url: "https://greenhermitage.se",
+			screenshot: "/images/iphone_mockup/hermitage.png",
+		},
 	];
 
 	let element: HTMLElement;
@@ -32,7 +37,7 @@
 
 	function slideUp(
 		node: HTMLElement,
-		{ delay = 0, duration = 250, easing = cubicOut, y = 20 } = {}
+		{ delay = 0, duration = 250, easing = cubicOut, y = 20 } = {},
 	) {
 		return {
 			delay,
@@ -54,7 +59,7 @@
 					context = "tabs";
 				}
 			},
-			{ threshold: 0.9 }
+			{ threshold: 0.9 },
 		);
 
 		if (!element) return;

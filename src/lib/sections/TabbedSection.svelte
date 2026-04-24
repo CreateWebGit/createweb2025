@@ -33,13 +33,13 @@
 			: type === "single"
 				? groups[0]
 				: (groups.find((g: Group) => g.id === activeGroupId) ??
-					groups[0])
+					groups[0]),
 	);
 	let activeItem = $derived<Item | null>(
 		!activeGroup || !activeGroup.items.length
 			? null
 			: (activeGroup.items.find((i: Item) => i.id === activeItemId) ??
-					activeGroup.items[0])
+					activeGroup.items[0]),
 	);
 
 	//entire section is bound to this variable, for intersectionObserver
@@ -55,7 +55,7 @@
 		}
 
 		const exists = activeGroup.items.some(
-			(i: Item) => i.id === activeItemId
+			(i: Item) => i.id === activeItemId,
 		);
 
 		if (!exists) {
@@ -71,7 +71,7 @@
 					$disableHeaderHide = false;
 				}
 			},
-			{ threshold: [0.2, 0.8] }
+			{ threshold: [0.2, 0.8] },
 		);
 
 		//kolla ifall elementet finns?

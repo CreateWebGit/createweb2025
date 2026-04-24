@@ -30,7 +30,7 @@
 
 	let steps = $derived(tabs.length);
 	let activeTab = $derived(
-		steps === 0 ? null : tabs[Math.min(activeIndex, steps - 1)]
+		steps === 0 ? null : tabs[Math.min(activeIndex, steps - 1)],
 	);
 
 	$effect(() => {
@@ -42,7 +42,7 @@
 
 		// Grab all tab buttons
 		const buttons = Array.from(
-			container.querySelectorAll<HTMLButtonElement>(".tab-button")
+			container.querySelectorAll<HTMLButtonElement>(".tab-button"),
 		);
 
 		const el = buttons[index];
@@ -57,7 +57,7 @@
 </script>
 
 <Section lines="X---X" borderBottom={true}>
-	<Column span={12} class="py-2 py-xs-2">
+	<Column span={12} class="py-4 py-xs-2">
 		{#if subheading}
 			<p class="subheading text-accent text-center">{subheading}</p>
 		{/if}

@@ -3,7 +3,7 @@
 	import Column from "../components/grid/Column.svelte";
 	import StripedContainer from "../components/layout/StripedContainer.svelte";
 	import ColumnButton from "../components/ColumnButton.svelte";
-	import { lightMode } from "$stores/themeStore";
+	import { setLightModeSource } from "$stores/themeStore";
 	import { showBookingForm } from "$lib/stores/layoutStore";
 
 	//types
@@ -58,10 +58,11 @@
 	let activeIndex = $state(0);
 	let steps = $derived(tabs.length);
 	let activeTab = $derived(
-		steps === 0 ? null : tabs[Math.min(activeIndex, steps - 1)]
+		steps === 0 ? null : tabs[Math.min(activeIndex, steps - 1)],
 	);
 
 	let bottomTabsVisible = $state(false);
+	const lightModeSource = Symbol("LightTabbedSection");
 
 	let wrapperEl: HTMLDivElement | null = null;
 
@@ -70,22 +71,19 @@
 
 		const observer = new IntersectionObserver(
 			([entry]) => {
-				console.log("is intersecting");
 				const isLight = entry.intersectionRatio >= 0.25;
-				lightMode.set(isLight);
 				bottomTabsVisible = isLight;
-				document.documentElement.classList.toggle(
-					"light-mode",
-					isLight
-				);
+				setLightModeSource(lightModeSource, isLight);
 			},
-			{ threshold: [0, 0.25, 1] }
+			{ threshold: [0, 0.25, 1] },
 		);
 
 		observer.observe(wrapperEl);
 
 		return () => {
 			observer.disconnect();
+			bottomTabsVisible = false;
+			setLightModeSource(lightModeSource, false);
 		};
 	});
 </script>
@@ -111,7 +109,7 @@
 				{/if}
 			</StripedContainer>
 		</Column>
-		<Column class="d-flex pt-4 pb-2 pb-xs-2 hide-mobile" span={12}>
+		<Column class="d-flex pt-4 pb-6 pb-xs-2 hide-mobile" span={12}>
 			{#each tabs as tab}
 				<button
 					class="tab-button"
@@ -241,5 +239,9 @@
 		width: 100%;
 		display: flex;
 		z-index: 150;
+
+		@media (min-width: 768px) {
+			display: none;
+		}
 	}
 </style>

@@ -137,14 +137,14 @@ header {
 
 					.link-navigation,
 					.mega-menu-dropdown-link {
-						color: #5d5d5d;
+						color: light-dark(#00000040, #5d5d5d);
 
 						&.active {
-							color: white;
+							color: light-dark(black, white);
 						}
 
 						&:hover {
-							color: white;
+							color: light-dark(black, white);
 						}
 					}
 				}

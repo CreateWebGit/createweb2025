@@ -116,8 +116,8 @@
 	];
 
 	const yearOptions: DataOption[] = [
-		{ value: 2025, label: "2025" },
 		{ value: 2026, label: "2026" },
+		{ value: 2027, label: "2027" },
 	];
 
 	let year = $state<DataOption>(yearOptions[0]);

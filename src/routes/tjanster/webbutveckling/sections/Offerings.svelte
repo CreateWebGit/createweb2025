@@ -12,7 +12,7 @@
 	>
 		<p class="subheading text-center text-accent">Webb som gör jobbet</p>
 		<h2 class="text-center">
-			Snabb, modern och <br /> skräddarsydd webbutveckling
+			Snabb, modern och skräddarsydd <br /> webbutveckling
 		</h2>
 	</Column>
 	<Column start={{ lg: 2, xs: 1 }} end={{ lg: 12, xs: 13 }} class="pt-2 pb-4">

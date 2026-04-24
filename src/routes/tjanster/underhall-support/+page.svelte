@@ -12,6 +12,7 @@
 	import TabbedSection from "$src/lib/sections/TabbedSection.svelte";
 	import FlexContainer from "$src/lib/components/layout/FlexContainer.svelte";
 	import FAQ from "$lib/sections/FAQ.svelte";
+	import Seo from "$lib/components/Seo.svelte";
 
 	//types
 	import type { AccordionItem } from "$src/lib/models/accordion";
@@ -272,6 +273,19 @@
 	];
 </script>
 
+<Seo
+	title="Underhåll och support | CreateWeb"
+	description="Löpande underhåll, proaktiv övervakning, snabb support och säker hosting som håller er webbplats stabil, säker och uppdaterad."
+	path="/tjanster/underhall-support"
+	image="/images/tjanster/underhall_support/hero_image.png"
+	keywords={[
+		"underhåll webbplats",
+		"teknisk support",
+		"hosting",
+		"prestandaoptimering",
+		"createweb",
+	]}
+/>
 <Header />
 <Hero
 	title={`Vi ser, hör och <span class="highlight">löser</span> det ni inte ens märkt än.`}
@@ -287,13 +301,14 @@
 		</div>
 	</FlexContainer>
 </Hero>
-<SectionDivider borderBottom />
+<SectionDivider borderBottom borderTop />
 <HorizontalScrollSectionAlt
 	subheading="vad vi erbjuder"
 	heading="vi håller koll på allt"
 	tabs={horizontalScrollTabsAlt}
 ></HorizontalScrollSectionAlt>
 <TwoColumnTextImage
+	borderBottom={false}
 	heading={'En webbplats är aldrig "klar". <br/> Den ska fungera, och utvecklas.'}
 	subheading={"Varför underhåll spelar roll"}
 	body={`De flesta företag låter webbplatsen samla damm tills något går sönder.
@@ -303,10 +318,10 @@
 	imageUrl="/images/cw_generic_developers.png"
 />
 
-<SectionDivider borderBottom />
+<SectionDivider borderBottom borderTop />
 <Section lines="XX-XX" borderBottom>
 	<Column span={3}></Column>
-	<Column span={6} class="py-2">
+	<Column span={6} class="py-4">
 		<p class="subheading text-accent text-center">varför välja oss</p>
 		<h2 class="text-center px-1">
 			Engagemang som större byråer glömt bort
@@ -318,7 +333,7 @@
 <FAQ
 	{accordionItems}
 	imageUrl="/images/tjanster/marknadsforing/faq_image.png"
-	title="Frågor vi ofta får om marknadsföring"
+	title="Frågor vi ofta får om underhåll & support"
 />
 <Footer />
 

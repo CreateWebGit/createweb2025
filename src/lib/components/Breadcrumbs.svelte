@@ -13,7 +13,7 @@
 		tjanster: "Tjänster",
 		"om-oss": "Om oss",
 		kontakt: "Kontakt",
-		markandsforing: "Markandsföring",
+		marknadsforing: "Marknadsföring",
 		"underhall-support": "Underhåll & Support",
 		"social-media": "Social Media",
 	};

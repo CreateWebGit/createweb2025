@@ -1,3 +1,13 @@
+<script lang="ts">
+	import Seo from "$lib/components/Seo.svelte";
+</script>
+
+<Seo
+	title="Integritetspolicy | CreateWeb"
+	description="Läs hur CreateWeb samlar in, använder och skyddar personuppgifter enligt GDPR när du använder createweb.se."
+	path="/integritetspolicy"
+	keywords={["integritetspolicy", "GDPR", "personuppgifter", "createweb"]}
+/>
 <header>
 	<div></div>
 	<div class="d-flex justify-center align-center">

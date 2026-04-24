@@ -24,7 +24,9 @@
 <Section lines={"XXXXX"}>
 	<Column class="d-flex flex-column pt-4 pb-2 pt-xs-2" span={6}>
 		<div>
-			<h1 class="subpage-hero-heading ml-1 pb-xs-2">{@html title}</h1>
+			<h1 class="subpage-hero-heading ml-1 pr-4 pb-xs-2">
+				{@html title}
+			</h1>
 			<p class="hero ml-1 mt-2 pr-10 pb-xs-4 hide-mobile">
 				{description}
 			</p>
@@ -39,7 +41,7 @@
 			borderTopFirst
 		/>
 	</Column>
-	<Column class="pt-3 pb-6" span={6}>
+	<Column class="pt-5 pb-6" span={6}>
 		<StripedContainer class="aspect-ratio-1-1">
 			{#if children}
 				{@render children()}

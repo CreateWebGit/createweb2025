@@ -11,6 +11,7 @@
 		imageUrl?: string;
 		imageAlt?: string;
 		reverse?: boolean;
+		borderBottom?: boolean;
 	}
 
 	let {
@@ -20,10 +21,11 @@
 		imageUrl = "/images/cw_generic_developers.png",
 		imageAlt = "lorem ipsum dolor",
 		reverse = false,
+		borderBottom = true,
 	}: Props = $props();
 </script>
 
-<Section borderBottom lines={"X---X"}>
+<Section {borderBottom} lines={"X---X"}>
 	<Column
 		class="text-column py-8 py-xs-4 d-flex justify-between flex-column"
 		span={5}

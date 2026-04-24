@@ -101,6 +101,19 @@
 		return () => media.removeEventListener("change", update);
 	});
 
+	$effect(() => {
+		if (!$showBookingForm) return;
+
+		const onKeyDown = (event: KeyboardEvent) => {
+			if (event.key === "Escape") {
+				$showBookingForm = false;
+			}
+		};
+
+		window.addEventListener("keydown", onKeyDown);
+		return () => window.removeEventListener("keydown", onKeyDown);
+	});
+
 	function getStepSubProgress(stepId: number) {
 		if (stepId !== 1) return null;
 
@@ -113,7 +126,7 @@
 			const svc = booking.caseDescription.service as ServiceId;
 			const total = Math.max(
 				1 + (SERVICE_QUESTIONS[svc]?.length ?? 0),
-				1
+				1,
 			);
 			return { current: total, total };
 		}
@@ -213,6 +226,12 @@
 		// If you're on step 1 and using substeps, optionally reset substep state here
 		currentStep = stepId;
 	}
+
+	function onOverlayClick(event: MouseEvent) {
+		if (event.target === event.currentTarget) {
+			$showBookingForm = false;
+		}
+	}
 </script>
 
 {#if !isDesktop}
@@ -227,7 +246,7 @@
 		<div class="booking-form">
 			<div class="header">
 				<div class="menu-bar">
-					<h4>Boka ett möte</h4>
+					<h4 class="mb-1">Boka ett möte</h4>
 					<!-- <p>Steg: 1 / 4</p> -->
 				</div>
 			</div>
@@ -283,7 +302,7 @@
 
 <!--the mobile and desktop CurrentStepComponent cannot be in the dom at the same time!, this needs to be unloaded-->
 {#if isDesktop}
-	<div class="booking-form-overlay hide-mobile">
+	<div class="booking-form-overlay hide-mobile" onclick={onOverlayClick}>
 		<div class="booking-form">
 			<div class="header">
 				<div class="menu-bar">
@@ -387,6 +406,14 @@
 		display: grid;
 		grid-template-rows: auto 1fr 4rem;
 		box-shadow: 0 -8px 40px rgba(0, 0, 0, 0.4);
+		animation: scale 0.3s ease forwards;
+
+		@keyframes scale {
+			from {
+				transform: scale(0.97);
+				opacity: 0;
+			}
+		}
 
 		@media (max-width: 768px) {
 			height: 100%;

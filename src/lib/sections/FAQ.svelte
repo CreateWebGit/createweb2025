@@ -58,7 +58,7 @@
 			</div>
 		</FlexContainer>
 	</Column>
-	<Column span={6} class="d-flex align-center flex-column-xs">
+	<Column span={6} class="d-flex align-start flex-column-xs py-4">
 		<ColumnAccordion
 			items={accordionItems}
 			allowOnlyOneOpen
@@ -67,7 +67,6 @@
 			type={"big"}
 			borderTopFirst={true}
 		/>
-
 		<FlexContainer class="hide-desktop pt-xs-4" direction="column">
 			<ColumnButton
 				type="button"

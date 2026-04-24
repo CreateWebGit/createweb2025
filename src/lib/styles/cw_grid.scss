@@ -403,3 +403,9 @@
 .border-bottom {
 	border-bottom: 1px solid var(--border-color);
 }
+
+.order-first-mobile {
+	@media (max-width: 768px) {
+		order: -1;
+	}
+}

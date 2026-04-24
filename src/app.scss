@@ -72,6 +72,7 @@ body {
 		transition:
 			background-color 0.2s ease,
 			backdrop-filter 0.2s ease;
+		z-index: 3;
 	}
 
 	&.megamenu-open {

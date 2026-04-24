@@ -56,7 +56,7 @@
 			</p>
 		</div>
 	</Column>
-	<Column class="pt-3 pb-6" span={6}>
+	<Column class="pt-5 pb-6" span={6}>
 		<StripedContainer class="aspect-ratio-1-1">
 			<FlexContainer class="h-100 w-100 align-center justify-center">
 				<div class="hero-image-container">

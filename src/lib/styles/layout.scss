@@ -275,7 +275,7 @@ header {
 	.services-link {
 		&:hover {
 			.mega-menu {
-				height: 13.22rem;
+				height: fit-content;
 				transition-delay: 0;
 
 				* {

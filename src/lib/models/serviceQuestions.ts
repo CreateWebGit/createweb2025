@@ -102,7 +102,7 @@ export const SERVICE_QUESTIONS: Partial<Record<ServiceId, ServiceQuestion[]>> =
 				type: "textarea",
 				question: "Beskriv kort ditt projekt, din idé eller utmaning",
 				description:
-					"Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi nemo, deleniti quos cupiditate nisi asperiores eligendi at praesentium voluptatibus unde.",
+					"Ge oss en snabb bild av vad du vill uppnå, så kan vi förstå riktning och omfattning direkt.",
 				required: true,
 			},
 			{

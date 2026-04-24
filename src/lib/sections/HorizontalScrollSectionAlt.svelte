@@ -69,7 +69,7 @@
 	<Column
 		borderTop
 		borderBottom
-		class="monochrome-striped-background"
+		class="monochrome-striped-background hide-mobile"
 		span={3}
 	/>
 
@@ -88,7 +88,7 @@
 		</div>
 	</Column>
 
-	<Column borderTop borderBottom span={3}>
+	<Column borderTop borderBottom span={3} class="hide-mobile">
 		<div class="horizontal-tabs-caret-container">
 			<button
 				class="horizontal-tabs-caret-button"
@@ -116,7 +116,7 @@
 	<Column
 		start={{ lg: 2, xs: 1 }}
 		end={{ lg: 12, xs: 13 }}
-		class="py-2 px-2 gap-2 py-xs-2 cw-grid"
+		class="py-2 px-2 gap-2 py-xs-2 px-xs-1 cw-grid"
 	>
 		{#if activeTab}
 			{@html activeTab.content}

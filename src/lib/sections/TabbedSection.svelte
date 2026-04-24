@@ -116,8 +116,8 @@
 
 			<!-- {groups[parseInt(activeGroupId)].title} -->
 
-			<div class="d-flex flex-column justify-center h-100 hide-mobile">
-				<h4 class="pl-1 pb-2">{activeGroup?.title}</h4>
+			<div class="d-flex flex-column justify-center h-100">
+				<h4 class="pl-1 pb-2 hide-mobile">{activeGroup?.title}</h4>
 
 				<div class="d-flex flex-column">
 					{#if activeGroup}
@@ -138,7 +138,10 @@
 			</div>
 		</Column>
 
-		<Column class="py-2 px-2 tabbed-section-content" span={7}>
+		<Column
+			class="py-2 px-2 tabbed-section-content order-first-mobile"
+			span={7}
+		>
 			{#if activeItem}
 				{@html activeItem.contentHtml}
 			{/if}
@@ -212,6 +215,11 @@
 			gap: 1.5rem;
 			padding: 1rem;
 			min-height: 36.125rem;
+
+			@media (max-width: 768px) {
+				min-height: unset;
+				margin-bottom: 1rem;
+			}
 
 			.image-container {
 				background-color: rgba(255, 255, 255, 0.15);

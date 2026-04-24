@@ -21,7 +21,7 @@
 	<Column span={6}>
 		<div class="px-1 px-xs-1">
 			<h2 class="mb-2">{content.title}</h2>
-			<div>
+			<div class="pb-xs-2">
 				{@html content.body}
 			</div>
 		</div>

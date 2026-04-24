@@ -24,7 +24,7 @@
 	const questions = $derived<ServiceQuestion[]>(
 		!activeService
 			? []
-			: (SERVICE_QUESTIONS[activeService as ServiceId] ?? [])
+			: (SERVICE_QUESTIONS[activeService as ServiceId] ?? []),
 	);
 
 	const totalSubSteps = $derived(1 + questions.length); // 0 = tjänst
@@ -32,7 +32,7 @@
 	const isLastSub = $derived(subStep === totalSubSteps - 1);
 
 	const currentQuestion = $derived<ServiceQuestion | null>(
-		subStep === 0 ? null : (questions[subStep - 1] ?? null)
+		subStep === 0 ? null : (questions[subStep - 1] ?? null),
 	);
 
 	function setService(service: ServiceId | "") {
@@ -188,9 +188,8 @@
 			<div class="substep-description">
 				<h4>Vilken typ av tjänst gäller det?</h4>
 				<p class="mt-1">
-					Lorem ipsum dolor sit amet consectetur adipisicing elit.
-					Excepturi nemo, deleniti quos cupiditate nisi asperiores
-					eligendi at praesentium voluptatibus unde.
+					Välj det som ligger närmast ditt behov just nu – vi anpassar
+					alltid lösningen efter din situation.
 				</p>
 			</div>
 			<div class="substep-answer-card-container">
@@ -234,7 +233,7 @@
 						oninput={(e) =>
 							setAnswer(
 								currentQuestion.id,
-								e.currentTarget.value
+								e.currentTarget.value,
 							)}
 						placeholder="Ordet är ditt..."
 					></textarea>
@@ -283,7 +282,7 @@
 						oninput={(e) =>
 							setAnswer(
 								`${currentQuestion.id}_other`,
-								e.currentTarget.value
+								e.currentTarget.value,
 							)}
 					/>
 				{/if}
@@ -306,7 +305,7 @@
 						oninput={(e) =>
 							setAnswer(
 								currentQuestion.id,
-								e.currentTarget.value
+								e.currentTarget.value,
 							)}
 					/>
 				</div>

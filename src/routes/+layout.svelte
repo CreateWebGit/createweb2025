@@ -6,7 +6,7 @@
 	import { onMount } from "svelte";
 	import { scale } from "svelte/transition";
 
-	let { children, data: content } = $props();
+	let { children } = $props();
 
 	$effect(() => {
 		//lock document when bookingForm is open
@@ -27,9 +27,9 @@
 		};
 	});
 
-	onMount(() => {
-		console.log(content);
-	});
+	// onMount(() => {
+	// 	console.log(content);
+	// });
 </script>
 
 {@render children?.()}
